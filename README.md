@@ -26,14 +26,14 @@ If you do not have XCode or the XCode command line tools installed, Homebrew
 will ask you to install it. This is much lighter than installing the full
 XCode.
 
-```console
+```bash
 xcode-select --install
 ```
 
 If you do not have Homebrew installed, you'll need to do this next. Copy/paste
 this in the Terminal application. It will download and install Homebrew.
 
-```console
+```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew analytics off # if you wish not to participate
@@ -45,7 +45,7 @@ macOS comes with Bash, nano and curl, but they're rather outdated. Homebrew can
 remedy this for you. iterm2 is just a nicer terminal to work in than the stock
 Terminal program supplied by Apple.
 
-```console
+```bash
 # Install new Bash
 brew install bash bash-completion
 
@@ -78,7 +78,7 @@ The default Homebrew version of R does not include this. Some version of TeX is
 required build PDF vignettes in R. BasicTeX is much smaller and lighter than
 the full MacTeX.
 
-```console
+```bash
 # Install XQuartz and Java
 brew cask install xquartz
 brew cask install java
@@ -104,7 +104,7 @@ sudo tlmgr install titling framed inconsolata
 
 ### Install C/C++ Compilers and Libraries
 
-```console
+```bash
 brew install gcc ccache cmake pkg-config autoconf automake
 ```
 
@@ -114,7 +114,7 @@ I prefer to use aliases rather than symlinking. This inserts the aliases for
 the homebrew version of gcc in your `~/.bash_profile`, which will be used for
 installing R and it's packages.
 
-```console
+```bash
 echo '
 # aliases
 alias gcc="gcc-8"
@@ -132,14 +132,14 @@ alias c++="c++-8"
 
 Your R installation will thank you.
 
-```console
+```bash
 brew install libxml2 libiconv libxslt
 brew link libxml2 --force
 ```
 
 ### Install OpenBLAS with OpenMP
 
-```console
+```bash
 brew install openblas --with-openmp
 ```
 
@@ -149,7 +149,7 @@ The basic version of R from Homebrew lacks several capabilities. This tap from [
 need the cairo version from this tap as well as pango for this installation of
 R.
 
-```console
+```bash
 # Tap sethrfore/srf for R and cairo
 brew tap sethrfore/r-srf
 brew install sethrfore/r-srf/cairo
@@ -167,7 +167,7 @@ R CMD javareconf
 This will install packages into a local directory and keeps packages as new
 versions of R are installed.
 
-```console
+```bash
 mkdir -p $HOME/Library/R/3.x/library
 $ cat > $HOME/.Renviron <<END
 R_LIBS_USER=$HOME/Library/R/3.x/library
@@ -180,7 +180,7 @@ LLVM or Low Level Virtual Machine is a library that allow faster compilation of
 R packages using OpenMP and also allows those packages to use OpenMP when
 we are normally using R.
 
-```console
+```bash
 brew install llvm
 ```
 
@@ -188,7 +188,7 @@ brew install llvm
 
 If you use any of R's spatial packages, you'll need these libraries.
 
-```console
+```bash
 # Install geospatial libraries
 brew tap osgeo/osgeo4mac
 brew install geos proj
@@ -199,13 +199,13 @@ brew install gdal2 \
 
 ### (Optional) Install Boost
 
-```console
+```bash
 brew install boost --with-icu4c --without-single
 ```
 
 ### (Optional) Install SSL/SSH Libraries
 
-```console
+```bash
 brew install libressl libssh2
 ```
 
@@ -214,7 +214,7 @@ brew install libressl libssh2
 
 These libraries are required by various R packages that I use.
 
-```console
+```bash
 brew install imagemagick --with-fontconfig --with-ghostscript \
     --with-librsvg --with-pango --with-webp
 
@@ -227,7 +227,7 @@ brew install v8-315 qpdf udunits pandoc jq protobuf
 This will set up the paths such that when compiling packages in R, R is able to
 find the libraries installed by Homebrew.
 
-```console
+```bash
 echo '
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
@@ -244,7 +244,7 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 
 ### Install RStudio and Fira Code
 
-```console
+```bash
 # Install fira-code font
 brew tap caskroom/fonts
 brew cask install font-fira-code
@@ -257,7 +257,7 @@ brew cask install rstudio
 
 Set the repository to automatically use RStudio's cloud project as a mirror.
 
-```console
+```bash
 echo '
 local({
   r <- getOption("repos")
@@ -269,7 +269,7 @@ local({
 
 Don't ask me if I want to save the workspace when I exit. Just quit!
 
-```console
+```bash
 echo '
 alias R="R --no-save"
 ' >> ~/.bash_profile
@@ -281,7 +281,7 @@ alias R="R --no-save"
 for macOS when compiling the package as this R installation using Homebrew will
 do. Set up the Makevars file to compile data.table:
 
-```console
+```bash
 echo '
 LLVM_LOC = /usr/local/opt/llvm
 CC=$(LLVM_LOC)/bin/clang -fopenmp
@@ -296,7 +296,7 @@ CPPFLAGS=-I/usr/local/opt/gettext/include -I$(LLVM_LOC)/include
 Install `data.table` just using the terminal. This will launch an R session,
 install `data.table` and then exit back to Bash.
 
-```console
+```bash
 R --vanilla << EOF
 install.packages('data.table', repos = 'https://cloud.r-project.org/')
 q()
@@ -310,13 +310,13 @@ see [the notes here](https://github.com/Rdatatable/data.table/wiki/Installation#
 
 First delete the Makevars file.
 
-```console
+```bash
 rm ~/.R/Makevars
 ```
 
 Then write the new, general-purpose Makevars file.
 
-```console
+```bash
 echo '
 CC=/usr/local/opt/llvm/bin/clang
 CXX=/usr/local/opt/llvm/bin/clang++
