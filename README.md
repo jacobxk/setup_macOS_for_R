@@ -176,9 +176,9 @@ END
 
 ### Install LLVM
 
-LLVM or Low Level Virtual Machine is a library that allow us to compile faster
-some R packages using OpenMP and also make that those packages use OpenMP when
-we are normally using R. To install it you run on your terminal the following:
+LLVM or Low Level Virtual Machine is a library that allow faster compilation of
+R packages using OpenMP and also allows those packages to use OpenMP when
+we are normally using R.
 
 ```console
 brew install llvm
