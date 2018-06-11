@@ -2,9 +2,9 @@
 # Set Up macOS for R
 
 There's a few blog posts about setting up macOS for R, _e.g._,
- ["Installing R on OS X – `100% Homebrew Edition'" - Bob Rudis](https://rud.is/b/2015/10/22/installing-r-on-os-x-100-homebrew-edition/);
+["Installing R on OS X – `100% Homebrew Edition'" - Bob Rudis](https://rud.is/b/2015/10/22/installing-r-on-os-x-100-homebrew-edition/);
 ["Setup OSX for R" - Bhaskar Karambelkar](https://dev.to/bhaskar_vk/setup-osx-for-r)
- and ["Install R 100% Homebrew Edition With OpenBlas & OpenMP – My Version" -
+and ["Install R 100% Homebrew Edition With OpenBlas & OpenMP – My Version" -
 Luis Puerto](http://luisspuerto.net/2018/01/install-r-100-homebrew-edition-with-openblas-openmp-my-version/).
 This repository is mainly for me to do this quickly when I need to. I've used
 a combination of these to get my R installed and running on macOS but as fast
@@ -12,8 +12,8 @@ as Homebrew changes the instructions change and there are always gotchas.
 
 I use [Homebrew](https://brew.sh/) to manage my R installation, while it can be
 finicky at times, it's been the easiest for me to use to maintain my R
-installation and geo packages that I use. This way of installing R will result
-in packages being compiled on installation. If you do not wish to do this,
+installation and geo packages that I use. _This way of installing R will result
+in packages being compiled on installation._ If you do not wish to do this,
 there are other methods for installing R using homebrew, _e.g._
 `brew cask install r-app`.
 
@@ -147,9 +147,10 @@ brew install openblas --with-openmp
 
 ### Install R
 
-The basic version of R from Homebrew lacks several capabilities. This tap from [sethrfore](https://github.com/sethrfore/homebrew-r-srf) fixes that, you'll
-need the cairo version from this tap as well as pango for this installation of
-R.
+The basic version of R from Homebrew lacks several capabilities. This tap from
+[sethrfore](https://github.com/sethrfore/homebrew-r-srf) fixes that. It's
+more like the defunct Homebrew/science tap's version of R. You'll need the
+cairo version from this tap R.
 
 ```bash
 # Tap sethrfore/srf for R and cairo
@@ -282,7 +283,8 @@ alias R="R --no-save"
 
 ### Install data.table
 
-`data.table` requires [special instructions](https://github.com/Rdatatable/data.table/wiki/Installation#openmp-enabled-compiler-for-mac)
+`data.table` requires
+[special instructions](https://github.com/Rdatatable/data.table/wiki/Installation#openmp-enabled-compiler-for-mac)
 for macOS when compiling the package as this R installation using Homebrew will
 do. Set up the Makevars file to compile data.table:
 
@@ -311,7 +313,9 @@ EOF
 ### Set Final Makevars for R
 
 The preceeding Makevars will cause issues when installing some other R packages,
-see [the notes here](https://github.com/Rdatatable/data.table/wiki/Installation#openmp-enabled-compiler-for-mac) regarding `stringi` in particular.
+see
+[the notes here](https://github.com/Rdatatable/data.table/wiki/Installation#openmp-enabled-compiler-for-mac)
+regarding `stringi` in particular.
 
 First delete the Makevars file.
 
@@ -334,7 +338,8 @@ CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of
+conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
@@ -342,7 +347,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Licence
 
-This project is licensed under the UNLICENSE - see the [LICENSE](LICENSE) file for details
+This project is licensed under the UNLICENSE - see the [LICENSE](LICENSE)
+file for details
 
 ## Acknowledgments
 
