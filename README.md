@@ -329,7 +329,7 @@ CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include
 
 ## Contributing
 
-Please read [CONTRIBUTING.md]() for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
@@ -341,6 +341,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* boB Rudis, @hrbrmstr
-* Luis Puerto, @luisspuerto
-* Bhaskar V. Karambelkar, @bhaskarvk
+* boB Rudis, [https://github.com/hrbrmstr](@hrbrmstr)
+* Luis Puerto, [https://github.com/luisspuerto](@luisspuerto)
+* Bhaskar V. Karambelkar, [https://github.com/bhaskarvk](@bhaskarvk)
