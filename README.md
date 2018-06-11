@@ -227,6 +227,9 @@ brew install v8-315 qpdf udunits pandoc jq protobuf
 This will set up the paths such that when compiling packages in R, R is able to
 find the libraries installed by Homebrew.
 
+It also sets the R library up such that you do not need to reinstall every
+package when you upgrade R.
+
 ```bash
 echo '
 export PATH="/usr/local/sbin:$PATH"
