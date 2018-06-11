@@ -1,12 +1,14 @@
 
 # Set Up macOS for R
 
-There's a few blog posts about setting up macOS for R, _e.g._, ["Installing R on OS X – `100% Homebrew Edition'" - Bob Rudis](https://rud.is/b/2015/10/22/installing-r-on-os-x-100-homebrew-edition/);
-["Setup OSX for R" - Bhaskar Karambelkar](https://dev.to/bhaskar_vk/setup-osx-for-r) and ["Install R 100% Homebrew Edition With OpenBlas & OpenMP – My Version" -
-Luis Puerto](http://luisspuerto.net/2018/01/install-r-100-homebrew-edition-with-openblas-openmp-my-version/). I've used a combination of these to get my R installed and
-running on macOS but as fast as Homebrew changes the instructions change and
-there are always gotchas. So I decided rather than another blog post, I'd set
-up a GitHub repository so that it can be updated easily as changes occur.
+There's a few blog posts about setting up macOS for R, _e.g._,
+ ["Installing R on OS X – `100% Homebrew Edition'" - Bob Rudis](https://rud.is/b/2015/10/22/installing-r-on-os-x-100-homebrew-edition/);
+["Setup OSX for R" - Bhaskar Karambelkar](https://dev.to/bhaskar_vk/setup-osx-for-r)
+ and ["Install R 100% Homebrew Edition With OpenBlas & OpenMP – My Version" -
+Luis Puerto](http://luisspuerto.net/2018/01/install-r-100-homebrew-edition-with-openblas-openmp-my-version/).
+This repository is mainly for me to do this quickly when I need to. I've used
+a combination of these to get my R installed and running on macOS but as fast
+as Homebrew changes the instructions change and there are always gotchas.
 
 I use [Homebrew](https://brew.sh/) to manage my R installation, while it can be
 finicky at times, it's been the easiest for me to use to maintain my R
@@ -340,7 +342,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Licence
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the UNLICENSE - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 
