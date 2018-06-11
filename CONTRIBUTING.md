@@ -5,11 +5,8 @@ interactions with the project.
 
 ## Pull Request Process
 
-1. When contributing to this repository, please first discuss the change you
-wish to make via issue, e-mail, or any other method with the owners of this
-repository before making a change.
-
-2. Update the README.md with details of changes.
+1. If you think you have an idea to improve this process, update the
+README.md with details of changes and submit a pull request. That's it.
 
 ## Code of Conduct
 
