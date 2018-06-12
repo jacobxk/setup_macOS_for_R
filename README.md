@@ -352,7 +352,7 @@ file for details
 
 ## Acknowledgments
 
-* boB Rudis, [https://github.com/hrbrmstr](@hrbrmstr)
-* Luis Puerto, [https://github.com/luisspuerto](@luisspuerto)
-* Bhaskar V. Karambelkar, [https://github.com/bhaskarvk](@bhaskarvk)
-* Roberto Salas, [https://github.com/robsalasco](@robsalasco)
+* boB Rudis, [@hrbrmstr](https://github.com/hrbrmstr)
+* Luis Puerto, [@luisspuerto](https://github.com/luisspuerto)
+* Bhaskar V. Karambelkar, [@bhaskarvk](https://github.com/bhaskarvk)
+* Roberto Salas, [@robsalasco](https://github.com/robsalasco)
