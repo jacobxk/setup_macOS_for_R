@@ -77,8 +77,8 @@ echo "include ~/.nano/*.nanorc" >> ~/.nanorc
 
 Install XQuartz and Java. XQuartz is required for "full functionality" in R.
 The default Homebrew version of R does not include this. Some version of TeX is
-required build PDF vignettes in R. BasicTeX is much smaller and lighter than
-the full MacTeX.
+required build PDF vignettes in R. TinyTeX, suggested by robsalasco, is much
+smaller and lighter than the full MacTeX and works very nicely with R.
 
 ```bash
 # Install XQuartz and Java
@@ -94,7 +94,7 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 # Get a better terminal
 brew cask install iterm2
 
-# Install TinyTeX
+# Install TinyTeX, thanks to robsalasco for the suggestion.
 curl -sL \
   "https://github.com/yihui/tinytex/raw/master/tools/install-unx.sh" | sh
 
@@ -355,3 +355,4 @@ file for details
 * boB Rudis, [https://github.com/hrbrmstr](@hrbrmstr)
 * Luis Puerto, [https://github.com/luisspuerto](@luisspuerto)
 * Bhaskar V. Karambelkar, [https://github.com/bhaskarvk](@bhaskarvk)
+* Roberto Salas, [https://github.com/robsalasco](@robsalasco)
