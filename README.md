@@ -94,14 +94,13 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 # Get a better terminal
 brew cask install iterm2
 
-# Install BasicTex
-brew install gnupg
-brew cask install basictex
+# Install TinyTeX
+curl -sL \
+  "https://github.com/yihui/tinytex/raw/master/tools/install-unx.sh" | sh
 
 # This step is necessary to install TeX packages to build R vignettes
-sudo tlmgr update --self
-sudo tlmgr update --all
-sudo tlmgr install titling framed inconsolata
+tlmgr update --self --all
+tlmgr install inconsolata
 ```
 
 ### Install C/C++ Compilers and Libraries
@@ -237,6 +236,7 @@ package when you upgrade R.
 echo '
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/opt/gdal2/bin:$PATH"
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig"
 export GDAL_DRIVER_PATH="/usr/local/lib/gdalplugins"
