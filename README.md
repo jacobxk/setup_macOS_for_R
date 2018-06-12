@@ -176,6 +176,20 @@ R_LIBS_USER=$HOME/Library/R/3.x/library
 END
 ```
 
+### (Optional) Change Permissions on the R Installed Directory
+
+If you install BioConductor it offers the option to update some of the base
+packages. The stock Homebrew installation does not allow the help files
+to be written. This changes the permissions to avoid this error.
+
+For most packages, this isn't an issue because the packages are installed
+in a local user library. If you aren't installing BioConductor or some
+other use case of the sort, it's OK to skip this.
+
+```bash
+chmod -R u+w /usr/local/Cellar/r
+```
+
 ### Install LLVM
 
 LLVM or Low Level Virtual Machine is a library that allow faster compilation of
