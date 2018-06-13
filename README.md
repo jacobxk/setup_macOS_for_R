@@ -281,7 +281,7 @@ Set the repository to automatically use RStudio's cloud project as a mirror.
 echo '
 local({
   r <- getOption("repos")
-  r["CRAN"] <- "https://cloud.r-project.org/"
+  r["CRAN"] <- "https://cran.rstudio.com/"
   options(repos = r)
 })
 ' >> ~/.Rprofile
