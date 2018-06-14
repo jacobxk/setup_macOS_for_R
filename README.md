@@ -350,6 +350,19 @@ CPPFLAGS=-I/usr/local/opt/gettext/include -I/usr/local/opt/llvm/include
 ' >> ~/.R/Makevars
 ```
 
+# Updating installed packages
+
+To update the packages in the local library, this command in R will reinstall
+all of them after an update to the R installation, _e.g._ 3.4.4 to 3.5.0.
+
+```R
+lib <- .libPaths()[1]
+
+pkgs <- as.data.frame(installed.packages(lib), stringsAsFactors=FALSE)$Package
+
+install.packages(pkgs, type = "source")
+```
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of
