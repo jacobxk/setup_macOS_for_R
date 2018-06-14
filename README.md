@@ -358,7 +358,8 @@ all of them after an update to the R installation, _e.g._ 3.4.4 to 3.5.0.
 ```R
 lib <- .libPaths()[1]
 
-pkgs <- as.data.frame(installed.packages(lib), stringsAsFactors=FALSE)$Package
+pkgs <- as.data.frame(installed.packages(lib),
+                      stringsAsFactors = FALSE)$Package
 
 install.packages(pkgs, type = "source")
 ```
