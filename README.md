@@ -18,7 +18,7 @@ there are other methods for installing R using homebrew, _e.g._
 `brew cask install r-app`.
 
 This installation will use [OpenBLAS](http://www.openblas.net/), which can lead
-to speed-ups and [BasicTeX](https://www.tug.org/mactex/morepackages.html), which
+to speed-ups and [TinyTeX](https://yihui.name/tinytex/), which
 is much smaller to install than the full MacTeX. If you're not comfortable
 installing TeX packages, I suggest installing the full MacTex.
 
@@ -73,7 +73,7 @@ curl -LJ https://gist.githubusercontent.com/adamhsparks/377026fc27667b13876c0fb4
 echo "include ~/.nano/*.nanorc" >> ~/.nanorc
 ```
 
-### Tap Useful Homebrew Taps and Install XQuartz, Java and BasicTeX.
+### Tap Useful Homebrew Taps and Install XQuartz, Java and TinyTeX.
 
 Install XQuartz and Java. XQuartz is required for "full functionality" in R.
 The default Homebrew version of R does not include this. Some version of TeX is
