@@ -303,6 +303,8 @@ for macOS when compiling the package as this R installation using Homebrew will
 do. Set up the Makevars file to compile data.table:
 
 ```bash
+mkdir .R
+
 echo '
 LLVM_LOC = /usr/local/opt/llvm
 CC=$(LLVM_LOC)/bin/clang -fopenmp
