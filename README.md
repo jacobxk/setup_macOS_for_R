@@ -32,6 +32,12 @@ XCode.
 xcode-select --install
 ```
 
+_For Mojave you will also need to install a package containing header files. The package is located at "/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14. pkg". See, https://forums.developer.apple.com/thread/104296 for more on this._
+
+```bash
+sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14. pkg
+```
+
 If you do not have Homebrew installed, you'll need to do this next. Copy/paste
 this in the Terminal application. It will download and install Homebrew.
 
