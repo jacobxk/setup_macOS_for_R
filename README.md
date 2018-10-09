@@ -144,12 +144,6 @@ brew link libxml2 --force
 brew install openblas --with-openmp
 ```
 
-### Install Tcl/Tk
-
-```bash
-brew install tcl-tk
-```
-
 ### Install R
 
 The basic version of R from Homebrew lacks several capabilities. This tap from
@@ -158,7 +152,7 @@ more like the defunct Homebrew/science tap's version of R. You'll need the
 cairo version from this tap R.
 
 ```bash
-# Tap sethrfore/srf for R and cairo
+# Tap sethrfore/homebrew-r-srf for R and cairo
 brew tap sethrfore/r-srf
 brew install sethrfore/r-srf/cairo
 
