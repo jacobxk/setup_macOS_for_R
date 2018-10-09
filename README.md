@@ -171,7 +171,7 @@ versions of R are installed.
 
 ```bash
 mkdir -p $HOME/Library/R/3.x/library
-$ cat > $HOME/.Renviron <<END
+cat > $HOME/.Renviron <<END
 R_LIBS_USER=$HOME/Library/R/3.x/library
 END
 ```
