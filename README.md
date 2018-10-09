@@ -144,6 +144,12 @@ brew link libxml2 --force
 brew install openblas --with-openmp
 ```
 
+### Install Tcl/Tk
+
+```bash
+brew install tcl-tk
+```
+
 ### Install R
 
 The basic version of R from Homebrew lacks several capabilities. This tap from
