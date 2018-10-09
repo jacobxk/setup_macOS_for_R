@@ -214,9 +214,7 @@ If you use any of R's spatial packages, you'll need these libraries.
 # Install geospatial libraries
 brew tap osgeo/osgeo4mac
 brew install geos proj
-brew install gdal2 \
-    --with-armadillo --with-complete --with-libkml \
-    --with-opencl --with-unsupported
+brew install gdal
 ```
 
 ### (Optional) Install Boost
