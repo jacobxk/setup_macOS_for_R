@@ -153,7 +153,7 @@ cairo version from this tap R.
 
 ```bash
 # Tap sethrfore/homebrew-r-srf for R and cairo
-brew tap sethrfore/r-srf
+brew tap sethrfore/homebrew-r-srf
 brew install sethrfore/r-srf/cairo
 
 # Install R
