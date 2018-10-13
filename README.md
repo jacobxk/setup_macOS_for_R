@@ -229,7 +229,7 @@ These libraries are required by various R packages that I use.
 brew install imagemagick --with-fontconfig --with-ghostscript \
     --with-librsvg --with-pango --with-webp
 
-brew install v8-315 qpdf udunits pandoc pandoc-citeproc jq protobuf libgit2
+brew install v8-315 qpdf udunits pandoc pandoc-citeproc jq protobuf libgit2 unixodbc
 
 ```
 
