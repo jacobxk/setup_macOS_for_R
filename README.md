@@ -49,7 +49,7 @@ brew analytics off # if you wish not to participate
 
 ### Install (an updated) Bash and (an updated) nano
 
-macOS comes with Bash, nano and curl, but they're rather outdated. Homebrew can
+macOS comes with Bash and curl, but they're rather outdated. Homebrew can
 remedy this for you. iterm2 is just a nicer terminal to work in than the stock
 Terminal program supplied by Apple.
 
@@ -63,21 +63,15 @@ sudo sh -c 'echo "/usr/local/bin/bash" >> /etc/shells'
 # Change your bash shell
 chsh -s /usr/local/bin/bash
 
-# Install an updated version of nano
-brew install nano
-
 # Install an updated version of curl
 brew install curl
 
-# Get improved nano syntax highlighting files
-git clone https://github.com/serialhex/nano-highlight.git ~/.nano
+# Get a better terminal
+brew cask install iterm2
 
-# and one for R
-curl -LJ https://gist.githubusercontent.com/adamhsparks/377026fc27667b13876c0fb4d7beac87/raw/22af7ac21581604a2418875b4308a6cc65065ddd/r.nanorc > ~/.nano/r.nanorc
-
-# update local nanorc file with the contents of the nanorc file below
-echo "include ~/.nano/*.nanorc" >> ~/.nanorc
 ```
+
+At this point, you can stop, close Terminal and launch iTerm2 and start using it instead.
 
 ### Tap Useful Homebrew Taps and Install XQuartz, Java and TinyTeX.
 
@@ -96,9 +90,6 @@ echo '
 # Setting $JAVA_HOME
 export JAVA_HOME="$(/usr/libexec/java_home)"
 ' >> ~/.bash_profile
-
-# Get a better terminal
-brew cask install iterm2
 
 # Install TinyTeX, thanks to robsalasco for the suggestion.
 curl -sL \
