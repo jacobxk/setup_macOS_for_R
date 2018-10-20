@@ -135,6 +135,12 @@ brew install libxml2 libiconv libxslt
 brew link libxml2 --force
 ```
 
+### (Optional) Install Boost
+
+```bash
+brew install boost --with-icu4c --without-single
+```
+
 ### Install OpenBLAS with OpenMP
 
 ```bash
@@ -206,12 +212,6 @@ If you use any of R's spatial packages, you'll need these libraries.
 brew tap osgeo/osgeo4mac
 brew install geos proj
 brew install gdal
-```
-
-### (Optional) Install Boost
-
-```bash
-brew install boost --with-icu4c --without-single
 ```
 
 ### (Optional) Install SSL/SSH Libraries
