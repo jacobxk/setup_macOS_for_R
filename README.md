@@ -24,13 +24,11 @@ installing TeX packages, I suggest installing the full MacTex.
 
 ## Install XCode Command Line Tools and Homebrew
 
-If you do not have XCode or the XCode command line tools installed, Homebrew
-will ask you to install it. This is much lighter than installing the full
-XCode.
+If you do not have XCode or the XCode command line tools installed, Homebrew will ask you to install it. This is much lighter than installing the full XCode.
 
-```bash
-xcode-select --install
-```
+Sign in and download the command line tools from Apple.com, https://developer.apple.com/download/more/ and then follow the instructions to install the package.
+
+### Install Header Files
 
 _For Mojave you will also need to install a package containing header files. The package is located at "/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14. pkg". See, https://forums.developer.apple.com/thread/104296 for more on this._
 
@@ -77,7 +75,7 @@ At this point, you can stop, close Terminal and launch iTerm2 and start using it
 
 Install XQuartz and Java. XQuartz is required for "full functionality" in R.
 The default Homebrew version of R does not include this. Some version of TeX is
-required build PDF vignettes in R. TinyTeX, suggested by robsalasco, is much
+required build PDF vignettes in R. TinyTeX, suggested by @robsalasco, is much
 smaller and lighter than the full MacTeX and works very nicely with R.
 
 ```bash
