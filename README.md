@@ -207,8 +207,7 @@ If you use any of R's spatial packages, you'll need these libraries.
 ```bash
 # Install geospatial libraries
 brew tap osgeo/osgeo4mac
-brew install geos proj
-brew install gdal
+brew install geos proj gdal
 ```
 
 ### (Optional) Install SSL/SSH Libraries
