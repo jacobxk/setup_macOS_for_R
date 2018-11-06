@@ -130,7 +130,6 @@ Your R installation will thank you.
 
 ```bash
 brew install libxml2 libiconv libxslt
-brew link libxml2 --force
 ```
 
 ### (Optional) Install Boost
@@ -244,8 +243,12 @@ echo '
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/gdal2/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/opt/X11/lib/pkgconfig"
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/opt/X11/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig"
 export GDAL_DRIVER_PATH="/usr/local/lib/gdalplugins"
 
 export R_LIBS_USER="$HOME/Library/R/3.x/library"
