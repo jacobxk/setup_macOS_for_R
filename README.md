@@ -18,18 +18,22 @@ there are other methods for installing R using homebrew, _e.g._
 `brew cask install r-app`.
 
 This installation will use [OpenBLAS](http://www.openblas.net/), which can lead
-to speed-ups and [BasicTeX](https://www.tug.org/mactex/morepackages.html), which
+to speed-ups and [TinyTeX](https://yihui.name/tinytex/), which
 is much smaller to install than the full MacTeX. If you're not comfortable
 installing TeX packages, I suggest installing the full MacTex.
 
 ## Install XCode Command Line Tools and Homebrew
 
-If you do not have XCode or the XCode command line tools installed, Homebrew
-will ask you to install it. This is much lighter than installing the full
-XCode.
+If you do not have XCode or the XCode command line tools installed, Homebrew will ask you to install it. This is much lighter than installing the full XCode.
+
+Sign in and download the command line tools from Apple.com, https://developer.apple.com/download/more/ and then follow the instructions to install the package.
+
+### Install Header Files
+
+_For Mojave you will also need to install a package containing header files. The package is located at "/Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14. pkg". See, https://forums.developer.apple.com/thread/104296 for more on this._
 
 ```bash
-xcode-select --install
+sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 ```
 
 If you do not have Homebrew installed, you'll need to do this next. Copy/paste
@@ -43,7 +47,7 @@ brew analytics off # if you wish not to participate
 
 ### Install (an updated) Bash and (an updated) nano
 
-macOS comes with Bash, nano and curl, but they're rather outdated. Homebrew can
+macOS comes with Bash and curl, but they're rather outdated. Homebrew can
 remedy this for you. iterm2 is just a nicer terminal to work in than the stock
 Terminal program supplied by Apple.
 
@@ -57,27 +61,21 @@ sudo sh -c 'echo "/usr/local/bin/bash" >> /etc/shells'
 # Change your bash shell
 chsh -s /usr/local/bin/bash
 
-# Install an updated version of nano
-brew install nano
-
 # Install an updated version of curl
 brew install curl
 
-# Get improved nano syntax highlighting files
-git clone https://github.com/serialhex/nano-highlight.git ~/.nano
+# Get a better terminal
+brew cask install iterm2
 
-# and one for R
-curl -LJ https://gist.githubusercontent.com/adamhsparks/377026fc27667b13876c0fb4d7beac87/raw/22af7ac21581604a2418875b4308a6cc65065ddd/r.nanorc > ~/.nano/r.nanorc
-
-# update local nanorc file with the contents of the nanorc file below
-echo "include ~/.nano/*.nanorc" >> ~/.nanorc
 ```
 
-### Tap Useful Homebrew Taps and Install XQuartz, Java and BasicTeX.
+At this point, you can stop, close Terminal and launch iTerm2 and start using it instead.
+
+### Tap Useful Homebrew Taps and Install XQuartz, Java and TinyTeX.
 
 Install XQuartz and Java. XQuartz is required for "full functionality" in R.
 The default Homebrew version of R does not include this. Some version of TeX is
-required build PDF vignettes in R. TinyTeX, suggested by robsalasco, is much
+required build PDF vignettes in R. TinyTeX, suggested by @robsalasco, is much
 smaller and lighter than the full MacTeX and works very nicely with R.
 
 ```bash
@@ -90,9 +88,6 @@ echo '
 # Setting $JAVA_HOME
 export JAVA_HOME="$(/usr/libexec/java_home)"
 ' >> ~/.bash_profile
-
-# Get a better terminal
-brew cask install iterm2
 
 # Install TinyTeX, thanks to robsalasco for the suggestion.
 curl -sL \
@@ -135,7 +130,12 @@ Your R installation will thank you.
 
 ```bash
 brew install libxml2 libiconv libxslt
-brew link libxml2 --force
+```
+
+### (Optional) Install Boost
+
+```bash
+brew install boost --with-icu4c --without-single
 ```
 
 ### Install OpenBLAS with OpenMP
@@ -152,8 +152,8 @@ more like the defunct Homebrew/science tap's version of R. You'll need the
 cairo version from this tap R.
 
 ```bash
-# Tap sethrfore/srf for R and cairo
-brew tap sethrfore/r-srf
+# Tap sethrfore/homebrew-r-srf for R and cairo
+brew tap sethrfore/homebrew-r-srf
 brew install sethrfore/r-srf/cairo
 
 # Install R
@@ -171,7 +171,7 @@ versions of R are installed.
 
 ```bash
 mkdir -p $HOME/Library/R/3.x/library
-$ cat > $HOME/.Renviron <<END
+cat > $HOME/.Renviron <<END
 R_LIBS_USER=$HOME/Library/R/3.x/library
 END
 ```
@@ -207,16 +207,7 @@ If you use any of R's spatial packages, you'll need these libraries.
 ```bash
 # Install geospatial libraries
 brew tap osgeo/osgeo4mac
-brew install geos proj
-brew install gdal2 \
-    --with-armadillo --with-complete --with-libkml \
-    --with-opencl --with-unsupported
-```
-
-### (Optional) Install Boost
-
-```bash
-brew install boost --with-icu4c --without-single
+brew install geos proj gdal
 ```
 
 ### (Optional) Install SSL/SSH Libraries
@@ -234,7 +225,7 @@ These libraries are required by various R packages that I use.
 brew install imagemagick --with-fontconfig --with-ghostscript \
     --with-librsvg --with-pango --with-webp
 
-brew install v8-315 qpdf udunits pandoc pandoc-citeproc jq protobuf
+brew install v8-315 qpdf udunits pandoc pandoc-citeproc jq protobuf libgit2 unixodbc
 
 ```
 
@@ -251,8 +242,12 @@ echo '
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/gdal2/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/opt/X11/lib/pkgconfig"
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/opt/X11/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig"
 export GDAL_DRIVER_PATH="/usr/local/lib/gdalplugins"
 
 export R_LIBS_USER="$HOME/Library/R/3.x/library"
@@ -303,6 +298,8 @@ for macOS when compiling the package as this R installation using Homebrew will
 do. Set up the Makevars file to compile data.table:
 
 ```bash
+mkdir .R
+
 echo '
 LLVM_LOC = /usr/local/opt/llvm
 CC=$(LLVM_LOC)/bin/clang -fopenmp
